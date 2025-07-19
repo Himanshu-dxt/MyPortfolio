@@ -3,101 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Himanshu Dixit | Developer & Educator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <!-- Navigation Bar -->
+    <div id="navbar">
+        <div class="nav-left">
+            <a class="active" href="#"><i class="fa fa-home"></i> HOME</a>
+            <a href="projects.html"><i class="fa fa-flask"></i> PROJECTS</a>
+            <a href="about.html"><i class="fa fa-user"></i> ABOUT</a>
+            <a href="contact.html"><i class="fa fa-envelope"></i> CONTACT</a>
+            <a href="search.html"><i class="fa fa-search"></i> SEARCH</a>
+        </div>
+        <div class="nav-right">
+            <a href="login.html" class="btn-login"><i class="fa fa-sign-in-alt"></i> SIGN IN</a>
+            <a href="register.html" class="btn-signup"><i class="fa fa-user-plus"></i> SIGN UP</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
         <div class="container">
-            <h1>Hi, I'm [Your Name]</h1>
-            <p>[Your Profession/Title]</p>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Learn. Build. Grow.</h1>
+                    <h2>I'm Himanshu Dixit, a developer who teaches what I build</h2>
+                    <div class="hero-buttons">
+                        <a href="#featured-projects" class="btn-primary">Explore Projects</a>
+                        <a href="#learning-paths" class="btn-secondary">Start Learning</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://via.placeholder.com/400x400" alt="Himanshu Dixit" class="profile-img">
+                </div>
+            </div>
         </div>
     </header>
 
     <main class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a passionate [your profession] with experience in [your skills]. I love creating [what you create] that solve real-world problems.</p>
-                    <p>When I'm not coding/designing/building, you can find me [your hobbies/interests].</p>
-                    <p>Currently, I'm working on [current project] and learning [what you're learning].</p>
-                </div>
-                <img src="https://via.placeholder.com/200" alt="Profile Photo" class="profile-img">
+        <!-- Dual-Purpose Feature Section -->
+        <section class="dual-purpose">
+            <div class="toggle-view">
+                <button class="view-btn active" data-view="portfolio">Portfolio View</button>
+                <button class="view-btn" data-view="learning">Learning View</button>
             </div>
-        </section>
-
-        <section id="projects">
-            <h2>My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Project 1" class="project-img">
-                    <div class="project-info">
-                        <h3>Project Title 1</h3>
-                        <p>Short description of what this project is about and what technologies you used.</p>
-                        <a href="#">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Project 2" class="project-img">
-                    <div class="project-info">
-                        <h3>Project Title 2</h3>
-                        <p>Short description of what this project is about and what technologies you used.</p>
-                        <a href="#">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Project 3" class="project-img">
-                    <div class="project-info">
-                        <h3>Project Title 3</h3>
-                        <p>Short description of what this project is about and what technologies you used.</p>
-                        <a href="#">View Project</a>
+            
+            <div class="view-content portfolio-view active">
+                <h2>Featured Work</h2>
+                <p class="section-description">Here are some of my professional projects with real-world impact.</p>
+                
+                <div class="featured-projects" id="featured-projects">
+                    <div class="project-highlight">
+                        <div class="project-details">
+                            <h3>E-Commerce Platform</h3>
+                            <p class="project-meta">React | Node.js | MongoDB | 2023</p>
+                            <p>Built a full-stack e-commerce solution with payment integration and admin dashboard.</p>
+                            <div class="project-actions">
+                                <a href="#" class="btn-case-study">Case Study</a>
+                                <span class="divider">|</span>
+                                <a href="#" class="btn-live-demo">Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/500x300" alt="E-Commerce Platform">
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section id="skills">
-            <h2>My Skills</h2>
-            <div class="skills-container">
-                <span class="skill">HTML</span>
-                <span class="skill">CSS</span>
-                <span class="skill">JavaScript</span>
-                <span class="skill">React</span>
-                <span class="skill">Node.js</span>
-                <span class="skill">Python</span>
-                <span class="skill">UI/UX Design</span>
-                <span class="skill">Git</span>
-                <!-- Add more skills as needed -->
+            
+            <div class="view-content learning-view">
+                <h2>Learn Through My Projects</h2>
+                <p class="section-description">Explore tutorials based on my real-world projects.</p>
+                
+                <div class="learning-paths" id="learning-paths">
+                    <div class="path-card">
+                        <div class="path-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Full-Stack Development</h3>
+                        <p>Learn modern web development through project-based tutorials.</p>
+                        <a href="#" class="btn-learn">Start Path</a>
+                    </div>
+                    
+                    <div class="path-card">
+                        <div class="path-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Apps</h3>
+                        <p>Build cross-platform mobile applications with React Native.</p>
+                        <a href="#" class="btn-learn">Start Path</a>
+                    </div>
+                    
+                    <div class="path-card">
+                        <div class="path-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Data Science</h3>
+                        <p>Practical data analysis and visualization projects.</p>
+                        <a href="#" class="btn-learn">Start Path</a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+        <!-- Testimonials/Endorsements -->
+        <section class="testimonials">
+            <h2>What People Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Himanshu's project tutorials helped me land my first developer job. The real-world approach made all the difference."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50" alt="Client 1">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>Junior Developer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"We hired Himanshu to build our platform and were impressed with both the result and his documentation for our team."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50" alt="Client 2">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <p>Startup Founder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2023 [Your Name]. All rights reserved.</p>
-            <div style="margin-top: 1rem;">
-                <a href="#" style="color: white; margin: 0 10px;">GitHub</a>
-                <a href="#" style="color: white; margin: 0 10px;">LinkedIn</a>
-                <a href="#" style="color: white; margin: 0 10px;">Twitter</a>
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Himanshu Dixit</h3>
+                    <p>Developer & Educator building practical learning resources.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Himanshu Dixit. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
