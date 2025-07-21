@@ -1,26 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
-            // Sidebar toggle functionality
+            // Navigation toggle functionality
             const menuToggle = document.querySelector('.menu-toggle');
-            const sidebar = document.getElementById('sidebar');
+            const closeNav = document.querySelector('.close-nav');
+            const navbar = document.getElementById('navbar');
             const body = document.body;
-            let isOpen = false;
-
+            
             menuToggle.addEventListener('click', function() {
-                isOpen = !isOpen;
-                
-                if (isOpen) {
-                    sidebar.classList.add('active');
-                    body.classList.add('sidebar-open');
-                    menuToggle.innerHTML = '<i class="fas fa-times"></i>';
-                    menuToggle.style.transform = 'rotate(90deg)';
-                } else {
-                    sidebar.classList.remove('active');
-                    body.classList.remove('sidebar-open');
-                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                    menuToggle.style.transform = 'rotate(0deg)';
-                }
+                navbar.classList.add('active');
+                body.classList.add('menu-open');
             });
-
+            
+            closeNav.addEventListener('click', function() {
+                navbar.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+            
+            // Close nav when clicking on a link
+            document.querySelectorAll('.nav-items a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navbar.classList.remove('active');
+                    body.classList.remove('menu-open');
+                });
+            });
+            
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
@@ -31,15 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                        // Close sidebar if open
-                        if (isOpen) {
-                            sidebar.classList.remove('active');
-                            body.classList.remove('sidebar-open');
-                            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                            menuToggle.style.transform = 'rotate(0deg)';
-                            isOpen = false;
-                        }
-                        
                         window.scrollTo({
                             top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
@@ -47,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
             });
-
+            
             // View toggle functionality
             const viewButtons = document.querySelectorAll('.view-btn');
             const viewContents = document.querySelectorAll('.view-content');
@@ -66,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.querySelector(`.${view}-view`).classList.add('active');
                 });
             });
-
+            
             // Animate elements when they come into view
             const animateOnScroll = function() {
                 const elements = document.querySelectorAll('.dual-purpose, .testimonials');
@@ -81,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
             };
-
+            
             // Initial check
             animateOnScroll();
             
